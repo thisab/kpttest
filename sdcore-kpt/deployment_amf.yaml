@@ -28,10 +28,10 @@ spec:
         imagePullPolicy: IfNotPresent
         stdin: true
         tty: true
-        command: [/free5gc/script/amf-run.sh]
+#        command: [/free5gc/script/amf-run.sh]
         command: ["/bin/bash", "-c"]
         args:
-        - "cat /free5gc/config/amfcfg.conf && GOTRACEBACK=crash /free5gc/amf/amf -amfcfg /free5gc/config/amfcfg.conf"
+        - "/free5gc/script/amf-run.sh && cat /free5gc/config/amfcfg.conf && GOTRACEBACK=crash /free5gc/amf/amf -amfcfg /free5gc/config/amfcfg.conf"
         env:
         - name: GRPC_GO_LOG_VERBOSITY_LEVEL
           value: "99"
