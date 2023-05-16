@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aether-roc-umbrella-alertmanager
+  namespace: default
+data:
+  alertmanager.yml: "global: {}\n  # slack_api_url: ''\n\nreceivers:\n  - name: default-receiver\n    webhook_configs:\n    - url: \n\nroute:\n  group_wait: 10s\n  group_interval: 1m\n  receiver: default-receiver\n  repeat_interval: 3h"

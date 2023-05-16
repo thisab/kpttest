@@ -1,0 +1,7 @@
+# A topology kind representing an Aether node
+apiVersion: topo.onosproject.org/v1beta1
+kind: Kind
+metadata:
+  name: aether
+spec:
+  aspects: {}

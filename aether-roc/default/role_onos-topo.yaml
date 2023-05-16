@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: null
+  name: onos-topo
+  namespace: default
+rules:
+- apiGroups:
+  - primitives.atomix.io
+  resources:
+  - '*'
+  resourceNames:
+  - onos-topo-objects
+  verbs:
+  - '*'

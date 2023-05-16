@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aether-roc-umbrella-datasources-templated
+  namespace: default
+  labels:
+    grafana_datasource: "aether-roc-gui"
+data:
+  prom-datasources.yaml: |
+    apiVersion: 1
+    datasources:
+    - name: datasource-acc
+      url: http://aether-roc-umbrella-prometheus-acc-server:80
+      type: prometheus
+      access: proxy
+      jsonData:
+        oauthPassThru: true
+    - name: datasource-amp
+      url: http://aether-roc-umbrella-prometheus-amp-server:80
+      type: prometheus
+      access: proxy
+      jsonData:
+        oauthPassThru: true
+    - name: datasource-acme-chicago
+      url: http://aether-roc-umbrella-prometheus-ace-server:80
+      type: prometheus
+      access: proxy
+      jsonData:
+        oauthPassThru: true
+    - name: datasource-starbucks-newyork
+      url: http://aether-roc-umbrella-prometheus-ace-server:80
+      type: prometheus
+      access: proxy
+      jsonData:
+        oauthPassThru: true
+    - name: datasource-starbucks-seattle
+      url: http://aether-roc-umbrella-prometheus-ace-server:80
+      type: prometheus
+      access: proxy
+      jsonData:
+        oauthPassThru: true
