@@ -1,0 +1,15 @@
+# Source: atomix-raft-storage/templates/storageplugin.yaml
+apiVersion: atomix.io/v2beta1
+kind: StoragePlugin
+metadata:
+  name: raft.storage.atomix.io
+spec:
+  protocol:
+    group: storage.atomix.io
+    kind: MultiRaftProtocol
+  drivers:
+  - version: v2beta2
+    image: "atomix/atomix-raft-storage-driver:v0.9.20"
+    config:
+      group: storage.atomix.io
+      kind: RaftSessionConfig
