@@ -1,0 +1,8 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: aether-roc
+  annotations:
+    config.kubernetes.io/local-config: "true"
+info:
+  description: aether-roc-2.1.29
