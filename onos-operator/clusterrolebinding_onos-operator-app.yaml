@@ -1,0 +1,17 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: onos-operator-app
+  labels:
+    app: onos-operator-app
+    chart: "app-operator-0.5.4"
+    release: "onos-operator"
+    heritage: "Helm"
+subjects:
+- kind: ServiceAccount
+  name: onos-operator-app
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: onos-operator-app
+  apiGroup: rbac.authorization.k8s.io

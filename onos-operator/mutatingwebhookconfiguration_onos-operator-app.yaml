@@ -1,0 +1,26 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: onos-operator-app
+  labels:
+    app: onos-operator-app
+    chart: "app-operator-0.5.4"
+    release: "onos-operator"
+    heritage: "Helm"
+webhooks:
+- name: registry.app.onosproject.org
+  rules:
+  - operations: ["CREATE"]
+    apiGroups: [""]
+    apiVersions: ["v1"]
+    resources: ["pods"]
+    scope: Namespaced
+  clientConfig:
+    service:
+      name: onos-operator-app
+      namespace: default
+      path: /inject-proxy
+  admissionReviewVersions: ["v1beta1"]
+  sideEffects: None
+  failurePolicy: Ignore
+  timeoutSeconds: 10
