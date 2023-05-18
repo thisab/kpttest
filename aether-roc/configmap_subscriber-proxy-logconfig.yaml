@@ -1,10 +1,11 @@
+# Source: aether-roc-umbrella/charts/subscriber-proxy/templates/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: aether-roc-umbrella-sdcore-prom-kafka-logconfig
+  name: subscriber-proxy-logconfig
   labels:
-    app: aether-roc-umbrella-sdcore-prom-kafka
-    chart: "sdcore-prom-kafka-1.0.0"
+    app: subscriber-proxy
+    chart: "subscriber-proxy-0.2.1"
     release: "aether-roc-umbrella"
     heritage: "Helm"
 data:

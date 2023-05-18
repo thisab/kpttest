@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aether-roc-umbrella-sdcore-adapter-v2-1
+  name: sdcore-adapter-v2-1
   namespace: default
   labels:
-    name: aether-roc-umbrella-sdcore-adapter-v2-1
+    name: sdcore-adapter-v2-1
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        name: aether-roc-umbrella-sdcore-adapter-v2-1
+        name: sdcore-adapter-v2-1
         app.kubernetes.io/name: sdcore-adapter-v2-1
         app.kubernetes.io/instance: aether-roc-umbrella
     spec:
@@ -68,7 +68,7 @@ spec:
       volumes:
       - name: logconfig
         configMap:
-          name: aether-roc-umbrella-sdcore-adapter-v2-1-logconfig
+          name: sdcore-adapter-v2-1-logconfig
       - name: secret
         secret:
-          secretName: aether-roc-umbrella-sdcore-adapter-v2-1-secret
+          secretName: sdcore-adapter-v2-1-secret

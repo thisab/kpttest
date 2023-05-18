@@ -28,7 +28,7 @@ spec:
         checksum/config: dbcf9b0cd8ab30065fc54cc52428ba026e3d4e56bb47ce2220053520c827ab84
         checksum/dashboards-json-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
         checksum/sc-dashboard-provider-config: 732b176b5141c1830aa1935e49a1aff73cfc876fb5dda8993c16f8735cb098dd
-        checksum/secret: ef83dffab7ec939fd5c026f772d392369c6fa54fdb35c3727391de878280f608
+        checksum/secret: 514e070f19375bf3fdd5e8ce7a46507f09e18698983a7bd5551eff7399329161
     spec:
       serviceAccountName: aether-roc-umbrella-grafana
       automountServiceAccountToken: true

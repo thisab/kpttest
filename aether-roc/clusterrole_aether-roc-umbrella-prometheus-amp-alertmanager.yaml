@@ -1,0 +1,12 @@
+# Source: aether-roc-umbrella/charts/prometheus-amp/templates/alertmanager/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    component: "alertmanager"
+    app: prometheus-amp
+    release: aether-roc-umbrella
+    chart: prometheus-amp-14.6.1
+    heritage: Helm
+  name: aether-roc-umbrella-prometheus-amp-alertmanager
+rules: []
