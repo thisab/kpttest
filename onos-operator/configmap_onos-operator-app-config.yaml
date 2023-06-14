@@ -1,12 +1,14 @@
+# Source: onos-operator/charts/app-operator/templates/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: onos-operator-app-config
   labels:
     app: onos-operator-app
-    chart: "app-operator-0.5.4"
+    chart: "app-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
+  namespace: kube-system
 data:
   logging.yaml: |-
     loggers:

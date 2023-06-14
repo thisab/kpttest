@@ -1,15 +1,12 @@
 # Source: onos-operator/charts/app-operator/templates/deployment.yaml
-# SPDX-FileCopyrightText: 2022 2020-present Open Networking Foundation <info@opennetworking.org>
-#
-# SPDX-License-Identifier: Apache-2.0
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: onos-operator-app
-  namespace: default
+  namespace: kube-system
   labels:
     app: onos-operator-app
-    chart: "app-operator-0.5.4"
+    chart: "app-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
 spec:
@@ -23,14 +20,14 @@ spec:
         name: onos-operator-app
         release: onos-operator
         app.kubernetes.io/name: "onos-operator-app"
-        app.kubernetes.io/version: "v0.5.1"
+        app.kubernetes.io/version: "v0.5.0"
         app.kubernetes.io/part-of: "onos-operator"
-        helm.sh/chart: "app-operator-0.5.4"
+        helm.sh/chart: "app-operator-0.5.1"
     spec:
       serviceAccountName: onos-operator-app
       initContainers:
       - name: init-certs
-        image: "onosproject/config-operator-init:v0.5.1"
+        image: "onosproject/config-operator-init:v0.5.0"
         imagePullPolicy: IfNotPresent
         securityContext:
           allowPrivilegeEscalation: false
@@ -64,7 +61,7 @@ spec:
           mountPath: /etc/webhook/certs
       containers:
       - name: controller
-        image: "onosproject/app-operator:v0.5.1"
+        image: "onosproject/app-operator:v0.5.0"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 60000
@@ -101,8 +98,6 @@ spec:
               fieldPath: metadata.namespace
         - name: GLOBAL_IMAGE_REGISTRY
           value: ""
-        - name: DEFAULT_PROXY_IMAGE
-          value: onosproject/onos-proxy:v0.1.2
         volumeMounts:
         - name: config
           mountPath: /etc/onos/config

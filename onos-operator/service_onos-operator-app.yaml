@@ -1,12 +1,14 @@
+# Source: onos-operator/charts/app-operator/templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: onos-operator-app
   labels:
     app: onos-operator-app
-    chart: "app-operator-0.5.4"
+    chart: "app-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
+  namespace: kube-system
 spec:
   selector:
     name: onos-operator-app

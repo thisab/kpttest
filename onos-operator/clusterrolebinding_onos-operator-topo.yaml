@@ -1,16 +1,17 @@
+# Source: onos-operator/charts/topo-operator/templates/clusterrolebinding.yaml
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: onos-operator-topo
   labels:
     app: onos-operator-topo
-    chart: "topo-operator-0.5.4"
+    chart: "topo-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
 subjects:
 - kind: ServiceAccount
   name: onos-operator-topo
-  namespace: default
+  namespace: kube-system
 roleRef:
   kind: ClusterRole
   name: onos-operator-topo

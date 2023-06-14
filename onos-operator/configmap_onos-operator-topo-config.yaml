@@ -1,12 +1,14 @@
+# Source: onos-operator/charts/topo-operator/templates/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: onos-operator-topo-config
   labels:
     app: onos-operator-topo
-    chart: "topo-operator-0.5.4"
+    chart: "topo-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
+  namespace: kube-system
 data:
   logging.yaml: |-
     loggers:

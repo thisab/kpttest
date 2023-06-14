@@ -1,15 +1,12 @@
 # Source: onos-operator/charts/topo-operator/templates/deployment.yaml
-# SPDX-FileCopyrightText: 2022 2020-present Open Networking Foundation <info@opennetworking.org>
-#
-# SPDX-License-Identifier: Apache-2.0
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: onos-operator-topo
-  namespace: default
+  namespace: kube-system
   labels:
     app: onos-operator-topo
-    chart: "topo-operator-0.5.4"
+    chart: "topo-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
 spec:
@@ -23,14 +20,14 @@ spec:
         name: onos-operator-topo
         release: onos-operator
         app.kubernetes.io/name: "onos-operator-topo"
-        app.kubernetes.io/version: "v0.5.3"
+        app.kubernetes.io/version: "v0.5.0"
         app.kubernetes.io/part-of: "onos-operator"
-        helm.sh/chart: "topo-operator-0.5.4"
+        helm.sh/chart: "topo-operator-0.5.1"
     spec:
       serviceAccountName: onos-operator-topo
       containers:
       - name: controller
-        image: "onosproject/topo-operator:v0.5.3"
+        image: "onosproject/topo-operator:v0.5.0"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 60000

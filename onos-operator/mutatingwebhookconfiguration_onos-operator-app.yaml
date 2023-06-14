@@ -1,10 +1,11 @@
+# Source: onos-operator/charts/app-operator/templates/mutatingwebhook.yaml
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   name: onos-operator-app
   labels:
     app: onos-operator-app
-    chart: "app-operator-0.5.4"
+    chart: "app-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
 webhooks:

@@ -1,3 +1,4 @@
+# Source: onos-operator/charts/app-operator/templates/clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -5,7 +6,7 @@ metadata:
   name: onos-operator-app
   labels:
     app: onos-operator-app
-    chart: "app-operator-0.5.4"
+    chart: "app-operator-0.5.1"
     release: "onos-operator"
     heritage: "Helm"
 rules:
